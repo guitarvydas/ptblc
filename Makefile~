@@ -1,0 +1,2 @@
+all:
+	prep pair.ohm pair.glue

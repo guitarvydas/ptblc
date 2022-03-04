@@ -1,0 +1,10 @@
+blc {
+Term
+  = lambda Term -- recursive
+  | index -- debruijnindex
+  |       -- empty
+space += "(" | ")"
+lambda="λ"
+index="0" .. "9"
+}
+

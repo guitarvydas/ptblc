@@ -1,0 +1,11 @@
+lotsofstuff [@stuff] = [[${stuff}]]
+stuff [x] = [[${x}]]
+  
+Macro
+  = Pair
+
+Pair = "$pair"
+
+anychar = ~"$" any
+}
+

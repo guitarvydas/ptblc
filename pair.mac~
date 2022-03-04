@@ -1,0 +1,5 @@
+blcmac {
+Macro
+  = Pair
+
+Pair = "$pair"

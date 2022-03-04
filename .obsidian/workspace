@@ -1,0 +1,100 @@
+{
+  "main": {
+    "id": "5578f7bb877fab05",
+    "type": "split",
+    "children": [
+      {
+        "id": "9880f3a5e0ce7b72",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "2022-03-03-parse.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b86bbd63ce37b8ff",
+    "type": "split",
+    "children": [
+      {
+        "id": "4a7ac873e9f60a20",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d35e349c31c8f49d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "c100944b623b7e4a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8736691868987859",
+    "type": "split",
+    "children": [
+      {
+        "id": "ccbd1cdb34d9cdf4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "02d599a1fc237f0c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2022-03-03-parse.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "9880f3a5e0ce7b72",
+  "lastOpenFiles": [
+    "2022-03-03-parse.md",
+    "2022-02-28-WIP Notes About Tunney's BLC.md",
+    "2022-03-01.md",
+    "2022-03-03.md",
+    "2022-03-02.md",
+    "exit 0.md",
+    "@PTBLC.md"
+  ]
+}

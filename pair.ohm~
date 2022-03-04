@@ -1,0 +1,15 @@
+blcmac {
+lotsofstuff = stuff+
+stuff
+  = applySyntactic<Macro>
+  | anychar
+  | "$"
+  
+Macro
+  = Pair
+
+Pair = "$pair"
+
+anychar = ~"$" any
+}
+
