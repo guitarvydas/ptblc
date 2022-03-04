@@ -1,0 +1,11 @@
+lotsofstuff [@stuff] = [[${stuff}]]
+stuff [x] = [[${x}]]
+  
+Macro [x] = [[${x}]]
+
+True [k] = [[ λλ1 ]]
+False [k] = [[ λλ0 ]]
+Nil [k] = [[ λλ0 ]]
+
+anychar [c] = [[${c}]]
+

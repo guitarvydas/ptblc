@@ -8,7 +8,7 @@ stuff
 Macro
   = Pair
 
-Pair = "$pair"
+Pair = "$false"
 
 anychar = ~"$" any
 }

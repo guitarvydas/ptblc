@@ -1,2 +1,2 @@
-λ [[%pair %false] [[%pair %true] %nil]]
+λ [[$pair $false] [[$pair $true] $nil]]
 λλλ 0

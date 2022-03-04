@@ -6,9 +6,13 @@ stuff
   | "$"
   
 Macro
-  = Pair
+  = True
+  | False
+  | Nil
 
-Pair = "$pair"
+True = "$true"
+False = "$false"
+Nil = "$nil"
 
 anychar = ~"$" any
 }
