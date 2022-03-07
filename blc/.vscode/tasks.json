@@ -1,0 +1,36 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "ptblc: clang build active file",
+			"command": "/usr/bin/clang",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"ptblc.c",
+				"parse.c",
+				"needbit.c",
+				"getbit.c",
+				"error.c",
+				"debug.c",
+				"dump.c",
+				"print.c",
+				"vars.c",
+				"-o",
+				"${fileDirname}/ptblc"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: /usr/bin/clang"
+		}
+	]
+}

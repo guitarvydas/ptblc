@@ -24,6 +24,11 @@
 #include <wchar.h>
 #endif
 
+#if 0
+[[$omega λ [$put [0 0]]]
+ λ [[[$omega λλ [[0 [[λ [0 [0 [0 λλ [[0 $true] 1]]]] $two] $false]] [1 1]]] [0 λλλλλλ 0]] 0]]
+#endif
+
 #define USAGE \
   " [-?h01] <lambda.txt >binary.txt\n\
 Converts de Bruijn notation to ASCII binary, e.g.\n\

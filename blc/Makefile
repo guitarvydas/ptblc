@@ -1,12 +1,15 @@
 .PHONY: all clean check tags
 
+# CC = x86_64-linux-musl-gcc -static -fdebug-prefix-map="$(PWD)"=
+# LD = x86_64-linux-musl-ld -static
+
 COMMA = ,
+CCFLAGS = -g -O2 -march=native
 
 LINK.s =					\
 	$(LD)					\
 	$(LDFLAGS)				\
-	-o $@					\
-	$(patsubst %.lds,-T %.lds,$^)
+	-o $@					
 
 LINK.c =					\
 	$(CC)					\
@@ -14,8 +17,7 @@ LINK.c =					\
 	$(CFLAGS)				\
 	$(addprefix -Wl$(COMMA),$(LDFLAGS))	\
 	$(CPPFLAGS)				\
-	-o $@					\
-	$(patsubst %.lds,-T %.lds,$^)
+	-o $@					
 
 FILES := $(wildcard *.*)
 SSRCS  = $(filter %.S,$(FILES))

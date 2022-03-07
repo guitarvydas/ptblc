@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "2022-03-04 exit0.md",
+            "file": "202-03-06-chomp.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2022-03-04 exit0.md",
+                "file": "202-03-06-chomp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,8 +89,9 @@
   },
   "active": "9880f3a5e0ce7b72",
   "lastOpenFiles": [
-    "2022-03-04 exit0.md",
+    "202-03-06-chomp.md",
     "2022-03-03-parse.md",
+    "2022-03-04 exit0.md",
     "2022-02-28-WIP Notes About Tunney's BLC.md",
     "2022-03-01.md",
     "2022-03-03.md",

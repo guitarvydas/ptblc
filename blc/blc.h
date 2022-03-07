@@ -49,7 +49,6 @@ extern struct Closure *contp;
 
 char GetBit(FILE *);
 char NeedBit(FILE *);
-const char *GetLoc(const char *, int);
 struct Parse Parse(int, FILE *);
 void Dump(int, int, FILE *);
 void Error(int, const char *, ...);

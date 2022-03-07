@@ -221,36 +221,34 @@ static int kIf[] = {
 };
 
 static int kOr[] = {
-    ABS,     //  0: (λλ 1 1 0)
-    ABS,     //  1: (λ 1 1 0)
-    APP, 6,  //  2: 1 1 0
-    APP, 2,  //  4: 1 1
-    VAR, 1,  //  6: 1
-    VAR, 1,  //  8: 1
-    VAR, 0,  // 10: 0
+    ABS,     // 32: λab.bba
+    ABS,     // 33: λa.aaɐ
+    APP, 6,  // 34: ɐɐq
+    APP, 2,  // 36: ɐɐ
+    VAR, 0,  // 38: ɐ
+    VAR, 0,  // 40: ɐ
+    VAR, 1,  // 42: q
 };
 
 static int kAnd[] = {
-    ABS,     //  0: (λλ 1 0 1)
-    ABS,     //  1: (λ 1 0 1)
-    APP, 6,  //  2: 1 0 1
-    APP, 2,  //  4: 1 0
-    VAR, 1,  //  6: 1
-    VAR, 0,  //  8: 0
-    VAR, 1,  // 10: 1
+    ABS,     // 32: λab.bab
+    ABS,     // 33: λa.aɐa
+    APP, 6,  // 34: ɐqɐ
+    APP, 2,  // 36: ɐq
+    VAR, 0,  // 38: ɐ
+    VAR, 1,  // 40: q
+    VAR, 0,  // 42: ɐ
 };
 
 static int kNot[] = {
-    ABS,     //  0: (λ 0 false true)
-    APP, 8,  //  1: 0 false true
-    APP, 2,  //  3: 0 false
-    VAR, 0,  //  5: 0
-    ABS,     //  7: false
-    ABS,     //  8: (λ 0)
-    VAR, 0,  //  9: 0
-    ABS,     // 11: true
-    ABS,     // 12: (λ 1)
-    VAR, 1,  // 13: 1
+    ABS,     // 32: λabc.acb
+    ABS,     // 33: λab.ɐba
+    ABS,     // 34: λa.qaɐ
+    APP, 6,  // 35: ɔɐq
+    APP, 2,  // 37: ɔɐ
+    VAR, 2,  // 39: ɔ
+    VAR, 0,  // 41: ɐ
+    VAR, 1,  // 43: q
 };
 
 static int kPair[] = {
@@ -264,7 +262,7 @@ static int kPair[] = {
     VAR, 1,  // 11: 1
 };
 
-static int kFirst[] = {
+static int kCar[] = {
     ABS,     //  0: (λ 0 false)
     APP, 2,  //  1: 0 false
     VAR, 0,  //  3: 0
@@ -273,7 +271,7 @@ static int kFirst[] = {
     VAR, 0,  //  7: 0
 };
 
-static int kSecond[] = {
+static int kCdr[] = {
     ABS,     //  0: (λ 0 true)
     APP, 2,  //  1: 0 true
     VAR, 0,  //  3: 0
@@ -346,6 +344,21 @@ static int kCons[] = {
 };
 
 static int kY[] = {
+    ABS,     // 32: λa.(λb.bb)(λb.a(bb))
+    APP, 7,  // 33: (λa.aa)(λa.ɐ(aa))
+    ABS,     // 35: λa.aa
+    APP, 2,  // 36: ɐɐ
+    VAR, 0,  // 38: ɐ
+    VAR, 0,  // 40: ɐ
+    ABS,     // 42: λa.ɐ(aa)
+    APP, 2,  // 43: q(ɐɐ)
+    VAR, 1,  // 45: q
+    APP, 2,  // 47: ɐɐ
+    VAR, 0,  // 49: ɐ
+    VAR, 0,  // 51: ɐ
+};
+
+static int kYCurry[] = {
     ABS,      //  0: (λ (λ 1 (0 0)) (λ 1 (0 0)))
     APP, 11,  //  1: (λ 1 (0 0)) (λ 1 (0 0))
     ABS,      //  3: (λ 1 (0 0))
@@ -363,17 +376,15 @@ static int kY[] = {
 };
 
 static int kIszero[] = {
-    ABS,     //  0: λ [[0 λλλ 0] ⊤]
-    APP, 9,  //  1: [[0 λλλ 0] ⊤]
-    APP, 2,  //  3: [0 λλλ 0]
-    VAR, 0,  //  5: 0
-    ABS,     //  7: λλλ 0
-    ABS,     //  8: ⊥
-    ABS,     //  9: λ 0
-    VAR, 0,  // 10: 0
-    ABS,     // 12: ⊤
-    ABS,     // 13: λ 1
-    VAR, 1,  // 14: 1
+    ABS,     // 32: λabc.a(λd.c)b
+    ABS,     // 33: λab.ɐ(λc.b)a
+    ABS,     // 34: λa.q(λb.a)ɐ
+    APP, 7,  // 35: ɔ(λa.ɐ)q
+    APP, 2,  // 37: ɔ(λa.ɐ)
+    VAR, 2,  // 39: ɔ
+    ABS,     // 41: λa.ɐ
+    VAR, 1,  // 42: q
+    VAR, 1,  // 44: q
 };
 
 static int kPred[] = {
@@ -398,24 +409,19 @@ static int kPred[] = {
 };
 
 static int kXor[] = {
-    ABS,      //  0: λab.a((λc.c(λde.e)(λde.d))b)b
-    ABS,      //  1: λa.ɐ((λb.b(λcd.d)(λcd.c))a)a
-    APP, 23,  //  2: q((λa.a(λbc.c)(λbc.b))ɐ)ɐ
-    APP, 2,   //  4: q((λa.a(λbc.c)(λbc.b))ɐ)
-    VAR, 1,   //  6: q
-    APP, 15,  //  8: (λa.a(λbc.c)(λbc.b))ɐ
-    ABS,      // 10: λa.a(λbc.c)(λbc.b)
-    APP, 8,   // 11: ɐ(λab.b)(λab.a)
-    APP, 2,   // 13: ɐ(λab.b)
-    VAR, 0,   // 15: ɐ
-    ABS,      // 17: λab.b
-    ABS,      // 18: λa.a
-    VAR, 0,   // 19: ɐ
-    ABS,      // 21: λab.a
-    ABS,      // 22: λa.ɐ
-    VAR, 1,   // 23: q
-    VAR, 0,   // 25: ɐ
-    VAR, 0,   // 27: ɐ
+    ABS,      // 32: λab.a(λcd.bdc)b
+    ABS,      // 33: λa.ɐ(λbc.acb)a
+    APP, 16,  // 34: q(λab.ɐba)ɐ
+    APP, 2,   // 36: q(λab.ɐba)
+    VAR, 1,   // 38: q
+    ABS,      // 40: λab.ɐba
+    ABS,      // 41: λa.qaɐ
+    APP, 6,   // 42: ɔɐq
+    APP, 2,   // 44: ɔɐ
+    VAR, 2,   // 46: ɔ
+    VAR, 0,   // 48: ɐ
+    VAR, 1,   // 50: q
+    VAR, 0,   // 52: ɐ
 };
 
 static int kAdd[] = {
@@ -684,6 +690,11 @@ void PrintDebruijn(int x, int head, int depth, FILE* f) {
           fputs("Y", f);
           return;
         }
+        if (x + sizeof(kYCurry) / sizeof(*kYCurry) <= end &&
+            !memcmp(mem + x, kYCurry, sizeof(kYCurry))) {
+          fputs("Y", f);
+          return;
+        }
         if (x + sizeof(kIf) / sizeof(*kIf) <= end &&
             !memcmp(mem + x, kIf, sizeof(kIf))) {
           fputs("if", f);
@@ -769,14 +780,14 @@ void PrintDebruijn(int x, int head, int depth, FILE* f) {
           fputs("dec", f);
           return;
         }
-        if (x + sizeof(kSecond) / sizeof(*kSecond) <= end &&
-            !memcmp(mem + x, kSecond, sizeof(kSecond))) {
-          fputs("second", f);
+        if (x + sizeof(kCdr) / sizeof(*kCdr) <= end &&
+            !memcmp(mem + x, kCdr, sizeof(kCdr))) {
+          fputs("cdr", f);
           return;
         }
-        if (x + sizeof(kFirst) / sizeof(*kFirst) <= end &&
-            !memcmp(mem + x, kFirst, sizeof(kFirst))) {
-          fputs("first", f);
+        if (x + sizeof(kCar) / sizeof(*kCar) <= end &&
+            !memcmp(mem + x, kCar, sizeof(kCar))) {
+          fputs("car", f);
           return;
         }
         if (x + sizeof(kMap) / sizeof(*kMap) <= end &&
@@ -920,6 +931,11 @@ void PrintLambda(int x, int head, int depth, int apps, FILE* f) {
         }
         if (x + sizeof(kY) / sizeof(*kY) <= end &&
             !memcmp(mem + x, kY, sizeof(kY))) {
+          fputs("Y", f);
+          return;
+        }
+        if (x + sizeof(kYCurry) / sizeof(*kYCurry) <= end &&
+            !memcmp(mem + x, kYCurry, sizeof(kYCurry))) {
           fputs("Y", f);
           return;
         }
@@ -1075,14 +1091,14 @@ void PrintLambda(int x, int head, int depth, int apps, FILE* f) {
           fputs("dec", f);
           return;
         }
-        if (x + sizeof(kSecond) / sizeof(*kSecond) <= end &&
-            !memcmp(mem + x, kSecond, sizeof(kSecond))) {
-          fputs("second", f);
+        if (x + sizeof(kCdr) / sizeof(*kCdr) <= end &&
+            !memcmp(mem + x, kCdr, sizeof(kCdr))) {
+          fputs("cdr", f);
           return;
         }
-        if (x + sizeof(kFirst) / sizeof(*kFirst) <= end &&
-            !memcmp(mem + x, kFirst, sizeof(kFirst))) {
-          fputs("first", f);
+        if (x + sizeof(kCar) / sizeof(*kCar) <= end &&
+            !memcmp(mem + x, kCar, sizeof(kCar))) {
+          fputs("car", f);
           return;
         }
         if (x + sizeof(kMap) / sizeof(*kMap) <= end &&

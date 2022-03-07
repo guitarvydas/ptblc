@@ -16,6 +16,8 @@
 ╚─────────────────────────────────────────────────────────────────────────────*/
 #ifndef __COSMOPOLITAN__
 #include <ctype.h>
+#include <stdio.h>
+#include <wchar.h>
 #endif
 #include "blc.h"
 
