@@ -6,3 +6,21 @@ exports.convertToOnes = function (n) {
     }
     return result;
 }
+
+exports.trim = function (s) {
+    return s.trim ();
+}
+
+var nameAsNumber = 64;
+
+exports.newName = function () {
+    nameAsNumber += 1;
+}
+
+exports.getName = function () {
+    return String.fromCharCode (nameAsNumber);
+}
+
+exports.getDeBruijnName = function (offset) {
+    return String.fromCharCode (nameAsNumber - offset);
+}

@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/ptblc",
-            "args": ["00100101"],
+            "args": ["-s","-r", "-d"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],

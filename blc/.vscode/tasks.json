@@ -17,6 +17,7 @@
 				"dump.c",
 				"print.c",
 				"vars.c",
+				"get_char.c",
 				"-o",
 				"${fileDirname}/ptblc"
 			],

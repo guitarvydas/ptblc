@@ -13,5 +13,8 @@ cat /tmp/_preprocessed
 
 echo convert to bits as ASCII
 $prep '.' '$' blc.ohm blc.glue --stop=1 --support=$cdir/support.js </tmp/_preprocessed
-    
+
+echo convert to Scheme
+$prep '.' '$' blc.ohm blc2scm.glue --stop=1 --support=$cdir/support.js </tmp/_preprocessed
+
 

@@ -1,0 +1,13 @@
+Program [Term arg] = [[(${Term} "${arg}")]]
+Term_recursive [lambda Term] =
+{{support.newName ();}}
+[[(lambda (${support.getName ()}) ${Term})]]
+  
+Term_debruijnindex [x] = [[${support.getDeBruijnName (x)}]]
+Term_nullTerm [lb rb] = [[]]
+Term_bracketedTerm [lb @Terms rb] = [[${Terms}]]
+space [c] = [[]]
+lambda [c] = [[]]
+index [c] = [[]]
+args [@cs] = [[${support.trim (cs)}]]
+

@@ -20,13 +20,15 @@
 #endif
 #include "blc.h"
 
+extern wint_t get_char ();
+
 char GetBit(FILE* f) {
   wint_t c;
   char comment;
   static wint_t buf, mask;
   if (!binary) {
     for (comment = 0;;) {
-      c = fgetwc(f);
+      c = get_char();
       if (c == -1) break;
       if (!comment) {
         fflush(stdout);
@@ -45,7 +47,7 @@ char GetBit(FILE* f) {
     c = !!(buf & mask);
     mask >>= 1;
   } else {
-    c = fgetc(f);
+    c = get_char ();
     if (c != -1) {
       buf = c;
       c = (c >> 7) & 1;

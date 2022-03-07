@@ -126,8 +126,10 @@ void Var(void) {
   Gc(t);
 }
 
+extern wint_t get_char ();
+
 void Gro(void) {
-  int c = fgetc(stdin);
+  int c = get_char ();
   if (c != -1) {
     Expand(ABS);
     Expand(APP);
