@@ -2,6 +2,7 @@ blc {
 Program = Term args
 Term
   = lambda Term -- recursive
+  | index index+ -- multipleIndices
   | index -- debruijnindex
   | "[" "]" -- nullTerm
   | "[" Term+ "]" -- bracketedTerm
@@ -10,4 +11,7 @@ lambda="λ"
 index="0" .. "9"
 args=any*
 }
+
+
+
 

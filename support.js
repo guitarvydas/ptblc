@@ -11,16 +11,26 @@ exports.trim = function (s) {
     return s.trim ();
 }
 
-var nameAsNumber = 64;
+var nameAsNumber = 64
+var nameStack = [];
 
-exports.newName = function () {
+function topName () {
+    var n = nameStack.pop ();
+    nameStack.push (n);
+    return n;
+}
+
+exports.pushNewName = function () {
     nameAsNumber += 1;
+    nameStack.push (nameAsNumber);
+    return "";
 }
 
-exports.getName = function () {
-    return String.fromCharCode (nameAsNumber);
+exports.popName = function () {
+    nameStack.pop ();
+    return "";
 }
 
-exports.getDeBruijnName = function (offset) {
-    return String.fromCharCode (nameAsNumber - offset);
+exports.getName = function (offset) {
+    return String.fromCharCode (topName () - offset);
 }

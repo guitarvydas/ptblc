@@ -1,13 +1,14 @@
 Program [Term arg] = [[(${Term} "${arg}")]]
 Term_recursive [lambda Term] =
-{{support.newName ();}}
-[[(lambda (${support.getName ()}) ${Term})]]
+{{support.pushNewName ();}}
+[[(lambda (${support.getName (0)}) ${Term})${support.popName ()}]]
   
-Term_debruijnindex [x] = [[${support.getDeBruijnName (x)}]]
+Term_debruijnindex [x] = [[${x}]]
 Term_nullTerm [lb rb] = [[]]
-Term_bracketedTerm [lb @Terms rb] = [[${Terms}]]
+Term_bracketedTerm [lb @Term rb] = [[${Term}]]
+Term_multipleIndices [index1 @rest] = [[(${index1} ${rest})]]
 space [c] = [[]]
 lambda [c] = [[]]
-index [c] = [[]]
+index [c] = [[${support.getName (c)}]]
 args [@cs] = [[${support.trim (cs)}]]
 
