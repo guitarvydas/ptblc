@@ -21,6 +21,10 @@ function topName () {
     return n;
 }
 
+exports.resetName = function () {
+    nameIndex = 0;
+}
+
 exports.pushNewName = function () {
     nameStack.push (nameIndex);
     nameIndex += 1;

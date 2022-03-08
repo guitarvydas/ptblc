@@ -1,4 +1,4 @@
-Program [Term arg] = [[(${Term} "${arg}")]]
+Program [Term arg] = {{support.resetName ();}} [[(${Term} "${arg}")]]
 Term_recursive [lambda Term] =
 {{support.pushNewName ();}}
 [[(lambda (${support.getName ('0')}) ${Term})${support.popName ()}]]
@@ -6,7 +6,7 @@ Term_debruijnindex [x] = [[${x}]]
 Term_nullTerm [lb rb] = [[]]
 Term_bracketed [lb Term rb] = [[${Term}]]
 InnerTerm_pair [t1 t2] = [[(${t1} ${t2})]]
-InnerTerm_single [t1] = [[${t1}]]
+InnerTerm_terms [@terms] = [[${terms}]]
 space [c] = [[]]
 lambda [c] = [[]]
 index [c] = [[${support.getName (c)} ]]

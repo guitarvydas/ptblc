@@ -6,8 +6,8 @@ Term
   | "[" "]" -- nullTerm
   | "[" InnerTerm "]" -- bracketed
 InnerTerm
-  = InnerTerm InnerTerm  -- pair
-  | Term       -- single
+  = index index  -- pair
+  | Term+        -- terms
 MoreIndices = index+
 space += "(" | ")"
 lambda="λ"
