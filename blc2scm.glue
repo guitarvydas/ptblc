@@ -1,17 +1,20 @@
 Program [Term arg] = {{support.resetName ();}} [[(${Term} "${arg}")]]
+
 Term_lambdacall [lambda Term1 Term2] =
 {{support.pushNewName ();}}
-[[(lambda (${support.getName ('0')}) (${Term1} ${Term2})${support.popName ()}]]
+[[@lambda (${support.getName ('0')}) (${Term1} ${Term2})@${support.popName ()}]]
+
 Term_lambda [lambda Term] =
 {{support.pushNewName ();}}
-[[(lambda (${support.getName ('0')}) ${Term})${support.popName ()}]]
+[[<lambda (${support.getName ('0')}) ${Term}>${support.popName ()}]]
+
 Term_call [lb i1 i2 rb] = [[(${i1} ${i2})]]
 Term_nested [lb Term rb] = [[${Term}]]
 Term_empty [lb rb] = [[]]
 Term_index [x] = [[${x}]]
 
-lb [c] = [[${c}]]
-rb [c] = [[${c}]]
+lb [c] = [[]]
+rb [c] = [[]]
 space [c] = [[]]
 lambda [c] = [[]]
 index [c] = [[${support.getName (c)} ]]

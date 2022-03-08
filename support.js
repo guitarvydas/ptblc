@@ -38,8 +38,5 @@ exports.popName = function () {
 
 exports.getName = function (offsetCharString) {
     let offset = parseInt (offsetCharString);
-    console.error (offsetCharString);
-    console.error (offset);
-    console.error (nameStack);
     return String (nameMap[topName () + offset]);
 }
