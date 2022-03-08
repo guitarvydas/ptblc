@@ -1,0 +1,18 @@
+blc {
+Program = Term args
+Term
+  = lb "apply" Term rb
+  | lb lambda Term Term rb -- bracketedlambdacall
+  | lambda Term Term -- lambdacall
+  | lambda Term      -- lambda
+  | lb Term Term rb  -- call
+  | lb Term rb       -- nested
+  | lb rb            -- empty
+  | index            -- index
+  
+lb = "[" | "("
+rb = "]" | ")"
+lambda="λ"
+index="0" .. "9"
+args=any*
+}
