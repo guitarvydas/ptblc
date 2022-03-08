@@ -4,7 +4,7 @@ Term_lambda [lambda Term] = [[${lambda}${Term}]]
 Term_call [lb t1 t2 rb] = [[${lb}${t1}${t2}${rb}]]
 Term_index [x] = [[1${support.convertToOnes()}0]]
 Term_empty [lb rb] = [[${lb}${rb}]]
-Term_bracketed [lb Term rb] = [[${lb}${Term}${rb}]]
+Term_nested [lb Term rb] = [[${lb}${Term}${rb}]]
 
 lb [c] = [[${c}]]
 rb [c] = [[${c}]]
