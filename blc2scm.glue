@@ -1,5 +1,9 @@
 Program [Term arg] = {{support.resetName ();}} [[(${Term} "${arg}")]]
 
+Term_bracketedlambdacall [lb lambda Term1 Term2 rb] =
+{{support.pushNewName ();}}
+[[@lambda (${support.getName ('0')}) (${Term1} ${Term2})@${support.popName ()}]]
+
 Term_lambdacall [lambda Term1 Term2] =
 {{support.pushNewName ();}}
 [[@lambda (${support.getName ('0')}) (${Term1} ${Term2})@${support.popName ()}]]

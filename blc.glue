@@ -1,4 +1,5 @@
 Program [Term arg] = [[${Term}${arg}]]
+Term_bracketedlambdacall [lb lambda Term1 Term2 rb] = [[lb ${lambda}${Term1}${Term2} rb]]
 Term_lambdacall [lambda Term1 Term2] = [[${lambda}${Term1}${Term2}]]
 Term_lambda [lambda Term] = [[${lambda}${Term}]]
 Term_call [lb t1 t2 rb] = [[${lb}${t1}${t2}${rb}]]

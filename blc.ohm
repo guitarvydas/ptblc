@@ -1,7 +1,8 @@
 blc {
 Program = Term args
 Term
-  = lambda Term Term -- lambdacall
+  = lb lambda Term Term rb -- bracketedlambdacall
+  | lambda Term Term -- lambdacall
   | lambda Term      -- lambda
   | lb Term Term rb  -- call
   | lb Term rb       -- nested
