@@ -11,8 +11,9 @@ exports.trim = function (s) {
     return s.trim ();
 }
 
-var nameAsNumber = 64
+var nameIndex = 0;
 var nameStack = [];
+var nameMap = "ABCDEFGHIJKLMN";
 
 function topName () {
     var n = nameStack.pop ();
@@ -21,8 +22,8 @@ function topName () {
 }
 
 exports.pushNewName = function () {
-    nameAsNumber += 1;
-    nameStack.push (nameAsNumber);
+    nameStack.push (nameIndex);
+    nameIndex += 1;
     return "";
 }
 
@@ -31,6 +32,10 @@ exports.popName = function () {
     return "";
 }
 
-exports.getName = function (offset) {
-    return String.fromCharCode (topName () - offset);
+exports.getName = function (offsetCharString) {
+    let offset = parseInt (offsetCharString);
+    console.error (offsetCharString);
+    console.error (offset);
+    console.error (nameStack);
+    return String (nameMap[topName () + offset]);
 }
