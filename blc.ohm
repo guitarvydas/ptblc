@@ -1,15 +1,15 @@
 blc {
 Program = Term args
 Term
-  = lambda Term -- recursive
-  | index -- debruijnindex
-  | "[" "]" -- nullTerm
-  | "[" InnerTerm "]" -- bracketed
-InnerTerm
-  = index index  -- pair
-  | Term+        -- terms
-MoreIndices = index+
-space += "(" | ")"
+  = lambda Term Term -- lambdacall
+  | lambda Term      -- lambda
+  | lb Term Term rb  -- call
+  | lb Term rb       -- nested
+  | lb rb            -- empty
+  | index            -- index
+  
+lb = "[" | "("
+rb = "]" | ")"
 lambda="λ"
 index="0" .. "9"
 args=any*
