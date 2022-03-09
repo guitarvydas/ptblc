@@ -15,28 +15,36 @@ var nameIndex = 0;
 var nameStack = [];
 var nameMap = "ABCDEFGHIJKLMN";
 
-function topName () {
-    var n = nameStack.pop ();
-    nameStack.push (n);
-    return n;
+exports.genNewVar = function () {
+    return "?";
 }
 
-exports.resetName = function () {
-    nameIndex = 0;
+exports.getVar = function () {
+    return "?";
 }
 
-exports.pushNewName = function () {
-    nameStack.push (nameIndex);
-    nameIndex += 1;
-    return "";
-}
+// function topName () {
+//     var n = nameStack.pop ();
+//     nameStack.push (n);
+//     return n;
+// }
 
-exports.popName = function () {
-    nameStack.pop ();
-    return "";
-}
+// exports.resetName = function () {
+//     nameIndex = 0;
+// }
 
-exports.getName = function (offsetCharString) {
-    let offset = parseInt (offsetCharString);
-    return String (nameMap[topName () + offset]);
-}
+// exports.pushNewName = function () {
+//     nameStack.push (nameIndex);
+//     nameIndex += 1;
+//     return "";
+// }
+
+// exports.popName = function () {
+//     nameStack.pop ();
+//     return "";
+// }
+
+// exports.getName = function (offsetCharString) {
+//     let offset = parseInt (offsetCharString);
+//     return String (nameMap[topName () + offset]);
+// }
