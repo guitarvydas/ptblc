@@ -15,8 +15,12 @@ var nameIndex = 0;
 var nameStack = [];
 var nameMap = "ABCDEFGHIJKLMN";
 
-exports.genNewVar = function () {
+exports.pushNewVar = function () {
     return "?";
+}
+
+exports.popVar = function () {
+    return "";
 }
 
 exports.getVar = function () {
