@@ -1,13 +1,16 @@
 blc {
 Program = Term args
 Term
-  = lb lambda Term Term rb -- bracketedlambdacall
-  | lambda Term Term -- lambdacall
-  | lambda Term      -- lambda
-  | lb Term Term rb  -- call
-  | lb Term rb       -- nested
-  | lb rb            -- empty
-  | index            -- index
+  = lb lambda PairOrSingle rb -- bracketedlambda
+  | lambda PairOrSingle       -- lambda
+  | lb PairOrSingle rb        -- nested
+  | lb rb                     -- empty
+  | index                     -- index
+
+PairOrSingle
+  = Term PairOrSingle -- application
+  | Term Term         -- two
+  | Term              -- single
   
 lb = "[" | "("
 rb = "]" | ")"

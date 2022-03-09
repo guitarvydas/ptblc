@@ -1,0 +1,6 @@
+grouping {
+  Line = Pair
+  Pair = digit Pair  -- recursive
+       | digit digit -- twoDigits
+       | digit       -- singleDigit
+}
