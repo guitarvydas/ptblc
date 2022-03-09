@@ -18,3 +18,7 @@
  (λλ 0))
 ;;;;
 
+(defun reverse (lis)
+  (cons (reverse (cdr lis)
+		 (car lis))))
+

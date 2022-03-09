@@ -1,0 +1,3 @@
+(apply 
+ (λ(apply [λλλ(apply 0 λλ0)] (apply [λλλ(apply 0 λλ1)] λλ0))) 
+ "0101")

@@ -1,18 +1,21 @@
 applyblc {
 Program = Term args
 Term
-  = lb "apply" Term rb     -- apply
-  | lb lambda Term Term rb -- bracketedlambdacall
-  | lambda Term Term       -- lambdacall
-  | lambda Term            -- lambda
-  | lb Term Term rb        -- call
-  | lb Term rb             -- nested
-  | lb rb                  -- empty
-  | index                  -- index
+  = lb "apply" Term Term rb -- apply
+  | lb lambda Term Term rb  -- bracketedlambdacall
+  | lambda Term Term        -- lambdacall
+  | lambda Term             -- lambda
+  | lb Term Term rb         -- call
+  | lb Term rb              -- nested
+  | lb rb                   -- empty
+  | index                   -- index
+  | string                  -- string
   
 lb = "[" | "("
 rb = "]" | ")"
 lambda="λ"
 index="0" .. "9"
+string = dq (~dq any)* dq
+dq = "\""
 args=any*
 }

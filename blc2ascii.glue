@@ -1,0 +1,16 @@
+Program [Term arg] = [[${Term} ${arg}]]
+Term_bracketedlambdacall [lb lambda Term1 Term2 rb] = [[${lambda}${Term1}${Term2}]]
+Term_lambdacall [lambda Term1 Term2] = [[${lambda}${Term1}${Term2}]]
+Term_lambda [lambda Term] = [[${lambda}${Term}]]
+Term_call [lb t1 t2 rb] = [[${t1}${t2}]]
+Term_index [x] = [[1${support.convertToOnes()}0]]
+Term_empty [lb rb] = [[]]
+Term_nested [lb Term rb] = [[${Term}]]
+
+lb [c] = [[${c}]]
+rb [c] = [[${c}]]
+space [c] = [[${c}]]
+lambda [c] = [[01]]
+index [c] = [[${c}]]
+args [@cs] = [[${cs}]]
+

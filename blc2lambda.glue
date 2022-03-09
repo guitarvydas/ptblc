@@ -1,4 +1,5 @@
-Program [Term arg] = [[(apply ${Term} "${support.trim (arg)}")]]
+Program [Term arg] = [[(apply ${Term} ${arg})]]
+Term_apply [lb k t1 t2 rb] = [[${lb}${k}${t1}${t2}${rb}]]
 Term_bracketedlambdacall [lb lambda Term1 Term2 rb] = [[${lambda}(apply ${Term1} ${Term2})]]
 Term_lambdacall [lambda Term1 Term2] = [[${lambda}(apply ${Term1} ${Term2})]]
 Term_lambda [lambda Term] = [[${lambda}${Term}]]
@@ -13,4 +14,7 @@ space [c] = [[${c}]]
 lambda [c] = [[${c}]]
 index [c] = [[${c}]]
 args [@cs] = [[${cs}]]
+
+string [dq @cs dq2] = [[${dq}${cs}${dq2}]]
+dq [c] = [[${c}]]
 
