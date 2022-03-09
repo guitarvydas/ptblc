@@ -18,8 +18,8 @@ echo insert Apply
 $prep '.' '$' blc.ohm blc2apply.glue --stop=1 --support=$cdir/support.js </tmp/_preprocessed >/tmp/_apply
 cat /tmp/_apply
 
-# echo insert Lambda
-# $prep '.' '$' applyblc.ohm blc2lambda.glue --stop=1 --support=$cdir/support.js </tmp/_apply
+echo insert Lambda
+$prep '.' '$' applyblc.ohm blc2lambda.glue --stop=1 --support=$cdir/support.js </tmp/_apply
 
 # echo convert to Scheme
 # #$prep '.' '$' blc.ohm blc2scm.glue --stop=1 --support=$cdir/support.js --trace </tmp/_preprocessed

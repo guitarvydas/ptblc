@@ -1,12 +1,12 @@
-Program [Term arg] = [[(apply1 ${Term} "${support.trim (arg)}")]]
+Program [Term arg] = [[(apply ${Term} "${support.trim (arg)}")]]
 Term_bracketedlambda [lb lambda ps rb] = [[${lambda}${ps}]]
 Term_lambda [lambda ps] = [[${lambda}${ps}]]
 Term_nested [lb ps rb] = [[${lb}${ps}${rb}]]
 Term_index [x] = [[${x}]]
 Term_empty [lb rb] = [[${lb}${rb}]]
 
-PairOrSingle_application [term ps] = [[(apply2 ${term} ${ps})]]
-PairOrSingle_two [t1 t2] = [[(apply3 ${t1} ${t2})]]
+PairOrSingle_application [term ps] = [[(apply ${term} ${ps})]]
+PairOrSingle_two [t1 t2] = [[(apply ${t1} ${t2})]]
 PairOrSingle_single [term] = [[${term}]]
 
 lb [c] = [[]]
