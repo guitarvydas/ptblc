@@ -3,6 +3,8 @@ all:
 	./run.bash <test1.bl
 	./run.bash <test2.bl
 
+test5:	
+	./run.bash <test5.bl
 test4:	
 	./run.bash <test4.bl
 test3:	
