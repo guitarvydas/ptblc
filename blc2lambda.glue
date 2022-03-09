@@ -1,5 +1,5 @@
 Program [Term arg] = [[${Term}${arg}]]
-Term_apply [lb kapply t1 t2 rb] = [[${lb}${kapply}${t1}${t2}${rb}]]
+Term_apply [lb kapply t1 t2 rb] = [[${lb}${kapply} ${t1} ${t2}${rb}]]
 Term_bracketedlambda [lb lambda ps rb] = [[${lb}${lambda}${ps}${rb}]]
 Term_lambda [lambda ps] = [[${lambda}${ps}]]
 Term_nested [lb ps rb] = [[${lb}${ps}${rb}]]
